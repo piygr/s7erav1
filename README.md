@@ -132,6 +132,86 @@ The file is an IPython notebook. The notebook imports helper functions from util
         </tr>
 </table>
 
+## Model_3.py
+<table>
+        <tr>
+                <th>Target</th>
+                <th>Result</th>
+                <th>Analysis</th>
+        </tr>
+        <tr>
+                <td>
+                        Add GAP & remove last layer
+                </td>
+                <td>
+                        <ol>
+                        <li>4.5k parameters</li>
+                        <li>Best training accuracy - 98.74 (20th epoch)</li>
+                        <li>Best test accuracy - 99.28% (18th Epoch)</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                        <li>Need to add capacity to reach 99.4 goal</li>
+                        <li>No overfitting </li>
+                        </ol>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        Add FC post GAP layer and see
+                </td>
+                <td>
+                        <ol>
+                                <li>Model parameters - 6.5k</li>
+                                <li>Best training accuracy - 99.11% (20th epoch)</li>
+                                <li>Best test accuracy - 99.36% (20th epoch)</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Underfitting but it's fine. </li>
+                                <li>Need to playaround with image transforms to make training difficult</li>
+                        </ol>
+                </td>
+        </tr>
+         <tr>
+                <td>
+                        <ol>
+                                <li>Add transformations to input dataset</li>
+                                <li>Need to add rotation between (-10) to (10) degree</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Best training accuracy - 98.36 (17th epoch)/li>
+                                <li>Best test accuracy - 99.34% (12th epoch)</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Training is difficult enough</li>
+                                <li>Need to reduce epochs using right LR strategy</li>
+                        </ol>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <ol>
+                                <li>Achieve 99.4% accuracy within 15 epochs. Trying out ReduceLROnPlateau (Learning rate 0.1, patience=2, threshold = 0.001)</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Best training accurancy - 98.73 (14th epoch)/li>
+                                <li>Best test accuracy - 99.41 (12th epoch)</li>
+                        </ol>
+                </td>
+                <td>
+                        Learning rate & batch size directly affects number of epochs
+                </td>
+        </tr>
+</table>
 
 Below is the model summary -
 ```

@@ -11,8 +11,7 @@ Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
 The file contains utility & helper functions needed for training & for evaluating our model.
 
 ## S7.ipynb
-The file is an IPython notebook. The notebook imports helper functions & _OptimizedNet_ model class from utils.py and model.py respectively.
-In the notebook, we are creating train & test datasets with various transformations on the base MNIST dataset.
+The file is an IPython notebook. The notebook imports helper functions from utils.py and Model class from Model_1.py, Model_2.py & Model_3.py.
 
 ## Model_1.py
 <table>

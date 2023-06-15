@@ -109,6 +109,74 @@ In the notebook, we are creating train & test datasets with various transformati
         </tr>
 </table>
 
+## Model_2.py
+<table>
+        <tr>
+                <th>Target</th>
+                <th>Result</th>
+                <th>Analysis</th>
+        </tr>
+        <tr>
+                <td>
+                        <ol>
+                        <li>Building a lighter model with params under 8k</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                        <li>6.7k parameters</li>
+                        <li>Best training accuracy - 99.45 (20th epoch)</li>
+                        <li>Best test accuracy - 98.97% (13th epoch)</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                        <li>Good model and can be pushed further</li>
+                        <li>Overfitting </li>
+                        </ol>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <ol>
+                                <li>Add normalisation, BatchNorm to push model efficiency</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>~6.9k params</li>
+                                <li>Best training accuracy - 99.74%</li>
+                                <li>Best test accuracy - 99.21%</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Still there's overfitting</li>
+                                <li>Model efficiency can't be pushed further</li>
+                        </ol>
+                </td>
+        </tr>
+         <tr>
+                <td>
+                        <ol>
+                                <li>Add regularization (Dropout) to get rid of overfitting</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Best training accuracy - 98.90 (19th epoch)/li>
+                                <li>Best test accuracy - 99.30% (18th epoch)</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Underfitting but that's because of regularisation, Good</li>
+                                <li>Model can't be pushed further with current capacity</li>
+                        </ol>
+                </td>
+        </tr>
+</table>
+
 
 Below is the model summary -
 ```

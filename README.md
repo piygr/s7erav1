@@ -1,89 +1,64 @@
-# Session 6 Assignment - Part 1
-![Neural Network](https://github.com/piygr/s6erav1/assets/135162847/7ac22310-965b-4cba-930e-65ddee3e6c45)
-**Showcasing backpropogation through excel for the above mentioned neural network**
-
-## How bakcpropogation works?
-The goal of neural netowrk training is to reduce the network error (mean squared error) of estimnated output with the labeled output.
-So, with every delta change in error, the mechanism of updating the network parameters value is called backpropogation.
-With the given neural network, we will understand how the backpropogation looks in action.
-
-1. In the first step, every neuron as a function of previous layer's connected neurons & corresponding weights is defined. Refer 1.) in the below screenshot.
-
-<img width="1337" alt="s6_part1_dEdW" src="https://github.com/piygr/s6erav1/assets/135162847/101f7fae-431a-4bc7-be26-2e6fecc9f587">
-
-2. In the second step, the partial derivatives of error w.r.t. parameters (weights), starting from the output layer moving towards the input layer (hence backpropogation) are derived. Refer to 2.) - 6.). 
-
-3. Once all the partial derivatives are derived in terms of weights, input values, target values & previous layer's neuron values, the excel sheet is populated as show below. 
-<img width="1222" alt="s6_part1_layer1" src="https://github.com/piygr/s6erav1/assets/135162847/151190c1-57f9-4209-bc18-e160fc4bf94e">
-<img width="1125" alt="s6_part1_layer2" src="https://github.com/piygr/s6erav1/assets/135162847/5cac1f43-4355-45c1-a042-bbf6d5af992f">
-<img width="914" alt="s6_part1_error_gradients" src="https://github.com/piygr/s6erav1/assets/135162847/afa864a0-9ec9-4b40-b7e9-dff862a40436">
-
-4. With every iteration, all the weights are updated, all neurons are computed and with the new error, the process is continued.
-
-5. Note that, to update weights in every iteration, the following equation is used. Here, learning rate plays an important role.
- 
-![image](https://github.com/piygr/s6erav1/assets/135162847/99f89b6c-e2f9-421b-826d-210ca6c1c61b)  
-
-## Effects of learning rate
-
-<table>
-        <tr>
-                <td>
-                        <span>
-        <b>Learning Rate - 0.1</b><br/>
-        <img width="300" alt="s6_part1_lr0 1" src="https://github.com/piygr/s6erav1/assets/135162847/39d84d65-3271-46c9-b048-b6c89a4473db">
-</span>
-                </td>
-                <td>
-                        <span><b>Learning Rate - 0.2</b><br/><img width="300" alt="s6_part1_lr0 2" src="https://github.com/piygr/s6erav1/assets/135162847/fae4258a-73d6-4cff-8aac-fdd53f17ab41"></span>
-                <td>
-        </tr>
-        <tr>
-                <td>
-                        <span>
-        <b>Learning Rate - 0.5</b><br/>
-        <img width="300" alt="s6_part1_lr0 5" src="https://github.com/piygr/s6erav1/assets/135162847/9c0b9cc7-78ac-48db-844f-dcf30f98e15b">
-</span> 
-                </td>
-                <td>
-                    <span>
-        <b>Learning Rate - 0.8</b><br/>
-        <img width="300" alt="s6_part1_lr0 8" src="https://github.com/piygr/s6erav1/assets/135162847/94fc1378-82f9-47d7-be53-d087204c7b3f">
-</span>    
-                <td>
-        </tr>
-        <tr>
-                <td>
-                    <span>
-        <b>Learning Rate - 1.0</b><br/>
-        <img width="300" alt="s6_part1_lr1 0" src="https://github.com/piygr/s6erav1/assets/135162847/f88d1e41-e976-4265-b2bc-1277438974d6">
-</span>    
-                </td>
-                <td>
-                     <span>
-        <b>Learning Rate - 2.0</b><br/>
-        <img width="300" alt="s6_part1_lr2 0" src="https://github.com/piygr/s6erav1/assets/135162847/7099b159-1a1d-4632-a010-c78c157529cc">
-</span>
-                <td>
-        </tr>
-</table>
-
-Since, learning rate is nothing but the weightage given to the error gradient. Higher the learning rate, faster the error converges to zero.
-But after a point if the learning rate is increased, the error doesn't converge. The reason is, the weights never reach to their local minima.
-
------
-
-# Session 6 Assignment - Part 2
+# Session 7 Assignment
 Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
 
 **Goal is to create a model with**
-- 99.4% validation accuracy
-- Less than 20k Parameters
-- Less than 20 Epochs
-- Have used BN, Dropout,
-- (Optional): a Fully connected layer, have used GAP.
+- 99.4% validation accuracy with consistency
+- Less than 8k Parameters
+- Less than 15 Epochs
+(Optional): a Fully connected layer, have used GAP.
 
-## model.py
+## How to setup
+### Prerequisits
+```
+1. python 3.8 or higher
+2. pip 22 or higher
+```
+
+It's recommended to use virtualenv so that there's no conflict of package versions if there are multiple projects configured on a single system. 
+Read more about [virtualenv](https://virtualenv.pypa.io/en/latest/). 
+
+Once virtualenv is activated (or otherwise not opted), install required packages using following command. 
+
+```
+pip install requirements.txt
+```
+
+## Running IPython Notebook using jupyter
+To run the notebook locally -
+```
+$> cd <to the project folder>
+$> jupyter notebook
+```
+The jupyter server starts with the following output -
+```
+To access the notebook, open this file in a browser:
+        file:///<path to home folder>/Library/Jupyter/runtime/nbserver-71178-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8888/?token=64bfa8105e212068866f24d651f51d2b1d4cc6e2627fad41
+     or http://127.0.0.1:8888/?token=64bfa8105e212068866f24d651f51d2b1d4cc6e2627fad41
+```
+
+Open the above link in your favourite browser, a page similar to below shall be loaded.
+
+![Jupyter server index page](https://github.com/piygr/s5erav1/assets/135162847/40087757-4c99-4b98-8abd-5c4ce95eda38)
+
+- Click on the notebook (.ipynb) link.
+
+A page similar to below shall be loaded. Make sure, it shows *trusted* in top bar. 
+If it's not _trusted_, click on *Trust* button and add to the trusted files.
+
+![Jupyter notebook page](https://github.com/piygr/s5erav1/assets/135162847/7858da8f-e07e-47cd-9aa9-19c8c569def1)
+Now, the notebook can be operated from the action panel.
+
+
+## utils.py
+The file contains utility & helper functions needed for training & for evaluating our model.
+
+## S7.ipynb
+The file is an IPython notebook. The notebook imports helper functions & _OptimizedNet_ model class from utils.py and model.py respectively.
+In the notebook, we are creating train & test datasets with various transformations on the base MNIST dataset.
+
+## Model_1.py
 The file contains model class *OptimizedNet* as subclass of _torch.nn.Module_. The _OptimizedNet_ model has 3 convolution blocks, followed by GAP layer.
 
 Below is the model summary -
@@ -129,13 +104,6 @@ Params size (MB): 0.07
 Estimated Total Size (MB): 0.83
 ----------------------------------------------------------------
 ```
-
-## utils.py
-The file contains utility & helper functions needed for training & for evaluating our model.
-
-## S6.ipynb
-The file is an IPython notebook. The notebook imports helper functions & _OptimizedNet_ model class from utils.py and model.py respectively.
-In the notebook, we are creating train & test datasets with various transformations on the base MNIST dataset.
 
 We can monitor our model performance while it's getting trained. The output looks like this - 
 ```
@@ -241,49 +209,6 @@ Test set: Average loss: 0.0131, Accuracy: 9958/10000 (99.58%)
 
 Adjusting learning rate of group 0 to 1.0000e-04.
 ```  
-
-## How to setup
-### Prerequisits
-```
-1. python 3.8 or higher
-2. pip 22 or higher
-```
-
-It's recommended to use virtualenv so that there's no conflict of package versions if there are multiple projects configured on a single system. 
-Read more about [virtualenv](https://virtualenv.pypa.io/en/latest/). 
-
-Once virtualenv is activated (or otherwise not opted), install required packages using following command. 
-
-```
-pip install requirements.txt
-```
-
-## Running IPython Notebook (S6.ipynb) using jupyter
-To run the notebook locally -
-```
-$> cd <to the project folder>
-$> jupyter notebook
-```
-The jupyter server starts with the following output -
-```
-To access the notebook, open this file in a browser:
-        file:///<path to home folder>/Library/Jupyter/runtime/nbserver-71178-open.html
-    Or copy and paste one of these URLs:
-        http://localhost:8888/?token=64bfa8105e212068866f24d651f51d2b1d4cc6e2627fad41
-     or http://127.0.0.1:8888/?token=64bfa8105e212068866f24d651f51d2b1d4cc6e2627fad41
-```
-
-Open the above link in your favourite browser, a page similar to below shall be loaded.
-
-![Jupyter server index page](https://github.com/piygr/s5erav1/assets/135162847/40087757-4c99-4b98-8abd-5c4ce95eda38)
-
-- Click on the notebook (.ipynb) link.
-
-A page similar to below shall be loaded. Make sure, it shows *trusted* in top bar. 
-If it's not _trusted_, click on *Trust* button and add to the trusted files.
-
-![Jupyter notebook page](https://github.com/piygr/s5erav1/assets/135162847/7858da8f-e07e-47cd-9aa9-19c8c569def1)
-Now, the notebook can be operated from the action panel.
 
 Happy Modeling :-) 
  

@@ -37,9 +37,7 @@ Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
         </tr>
         <tr>
                 <td>
-                        <ol>
-                                <li>Building a lighter model with params under 30k</li>
-                        </ol>
+                        Building a lighter model with params under 30k
                 </td>
                 <td>
                         <ol>
@@ -66,9 +64,7 @@ Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
         </tr>
         <tr>
                 <td>
-                        <ol>
-                        <li>Building a lighter model with params under 8k</li>
-                        </ol>
+                        Building a lighter model with params under 8k
                 </td>
                 <td>
                         <ol>
@@ -86,9 +82,7 @@ Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
         </tr>
         <tr>
                 <td>
-                        <ol>
-                                <li>Add normalisation, BatchNorm to push model efficiency</li>
-                        </ol>
+                        Add normalisation, BatchNorm to push model efficiency
                 </td>
                 <td>
                         <ol>
@@ -106,9 +100,7 @@ Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
         </tr>
          <tr>
                 <td>
-                        <ol>
-                                <li>Add regularization (Dropout) to get rid of overfitting</li>
-                        </ol>
+                        Add regularization (Dropout) to get rid of overfitting
                 </td>
                 <td>
                         <ol>
@@ -190,8 +182,7 @@ Model to detect handwritten digits, trained on MNIST dataset of 60,000 images.
         </tr>
         <tr>
                 <td>
-                        <ol>
-                                <li>Achieve 99.4% accuracy within 15 epochs. Trying out ReduceLROnPlateau (Learning rate 0.1, patience=2, threshold = 0.001)</li>
+                        Achieve 99.4% accuracy within 15 epochs. Trying out ReduceLROnPlateau (Learning rate 0.1, patience=2, threshold = 0.001)
                         </ol>
                 </td>
                 <td>

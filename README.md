@@ -59,7 +59,56 @@ The file is an IPython notebook. The notebook imports helper functions & _Optimi
 In the notebook, we are creating train & test datasets with various transformations on the base MNIST dataset.
 
 ## Model_1.py
-The file contains model class *OptimizedNet* as subclass of _torch.nn.Module_. The _OptimizedNet_ model has 3 convolution blocks, followed by GAP layer.
+<table>
+        <tr>
+                <th>Target</th>
+                <th>Result</th>
+                <th>Analysis</th>
+        </tr>
+        <tr>
+                <td>
+                        <ol>
+                        <li>Building data loaders, test & train data sets and train & test loop</li>
+                        <li>Also, setting basic skeleton with working model (without shape, size errors in model) </li>
+                        <li>Working model should be able to reach 98-99% accuracy on the dataset with the skeleton model</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                        <li>390K+ parameters </li>
+                        <li>Best training accuracy - 99.94% </li>
+                        <li>Best test accuracy - 99.41% </li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                        <li>Too many parameters, need lighter model </li>
+                        <li>Overfitting </li>
+                        </ol>
+                </td>
+        </tr>
+        <tr>
+                <td>
+                        <ol>
+                                <li>Building a lighter model with params under 30k</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>~26K parameters</li>
+                                <li>Best training accuracy - 99.84</li>
+                                <li>Best test accuracy - 99.23%</li>
+                        </ol>
+                </td>
+                <td>
+                        <ol>
+                                <li>Skeleton working, need to further reduce the params</li>
+                                <li>Overfitting</li>
+                        </ol>
+                </td>
+        </tr>
+</table>
+
 
 Below is the model summary -
 ```

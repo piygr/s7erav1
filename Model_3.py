@@ -81,7 +81,7 @@ class Model3(nn.Module):
             nn.Dropout2d(0.05)
         )
 
-        self.pool1 = nn.MaxPool2d(2, 2)  # rf 6 -> 12x12
+        self.pool1 = nn.MaxPool2d(2, 2)  # rf 6 -> 14x14
 
         self.conv3 = nn.Sequential(
             nn.Conv2d(8, 12, 3),  # rf 10 -> 12x12
@@ -120,7 +120,7 @@ class Model3(nn.Module):
         )'''
 
         self.gap = nn.Sequential(
-            nn.AvgPool2d(3)
+            nn.AvgPool2d(3)                 # 24 + (3-1)*4
         )
 
         self.fc = nn.Linear(20, 10)
@@ -161,4 +161,4 @@ test_transforms = transforms.Compose([
 
 def get_scheduler(optimizer):
     #return optim.lr_scheduler.StepLR(optimizer, step_size=6, gamma=0.1, verbose=True)
-    return optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'max', patience=1, threshold=0.001, threshold_mode='abs', verbose=True)
+    return optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'max', patience=1, threshold=0.001, threshold_mode='abs', eps=0.001, verbose=True)
